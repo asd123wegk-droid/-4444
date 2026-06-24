@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liverpool FC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(90, 0, 0);
+      }
+
+      .navbar {
+        background-color: rgba(58, 0, 0, 0.897);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #00ac09;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"
+      width="60" ><span>Liverpool FC</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html" class="active">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+    </ul>
+    
+    </nav>
+
+
+    <header class="hero">
+      <img src="../../img/team/ลิเวอร์พูล.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>Liverpool FC<br><span style="color: #b30000; animation: blinking 1s step-start infinite;">ตำนานหงส์แดง</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่แห่งแอนฟิลด์<br>เรื่องราวของจ้าวยุโรป 6 สมัย และเหล่าตำนานนักเตะที่ยิ่งใหญ่ที่สุดตลอดกาล</p>
+      <a href="#history" class="btn-primary" style="background-color: #009207;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+<div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/PremierLeague.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Premier League</span>
+  </div>
+  
+  <div class="team-badge">
+    <img src="https://i.namu.wiki/i/JI2cr4fvif3ZLORxENEKunrZ3xKxdslVjn-N9RAQJugbgRWbdkrz9DA9F5c8yRwc8pPTDcABTHXSkPBPWdrwSg.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FA Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/League_Cup_Trophy.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>EFL Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-vector/20250906/ourmid/pngtree-the-uefa-champions-league-trophy-cup-png-image_17378593.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Champions League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-vector/20260115/ourmid/pngtree-transparent-uefa-champions-league-trophy-with-ornate-handles-and-engraved-logo-png-image_18529349.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Europa League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Supercoppa_UEFA.svg" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Super Cup</span>
+  </div>
+  
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-vector/20250808/ourmid/pngtree-fifa-club-world-cup-trophy-png-image_16782183.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FIFA Club World Cup</span>
+  </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2014/12/1f9f2652-e3de-4098-a230-2e8eb31f7c66.jpeg?resize=686%2C513&quality=80'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Steven Gerrard</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Kenny\ Dalglish.webp'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Kenny Dalglish</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Ian\ Rush.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ian Rush</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/John\ Barnes.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>John Barnes</h4><p style="color: #ffffff54;">ปีกซ้าย / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Mohamed\ Salah.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Mohamed Salah</h4><p style="color: #ffffff54;">ปีกขวา / กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Graeme\ Souness.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Graeme Souness</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Kevin\ Keegan.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Kevin Keegan</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Alan\ Hansen.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Alan Hansen</h4><p style="color: #ffffff54;">กองหลัง (เซ็นเตอร์แบ็ค)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Ray\ Clemence.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ray Clemence</h4><p style="color: #ffffff54;">ผู้รักษาประตู</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Robbie\ Fowler.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Robbie Fowler</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+
+  </div>
+</section>
+
+    <h2 class="section-title">เกมประวัติศาสตร์</h2>
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://f.ptcdn.info/460/017/000/1396592428-champion-o.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2004-05 (ปาฏิหาริย์ที่อิสตันบูล)</h2>
+      <p>หนึ่งในนัดชิงชนะเลิศที่ดราม่าและเป็นที่จดจำมากที่สุดในประวัติศาสตร์ฟุตบอล ลิเวอร์พูลตกเป็นรอง เอซี มิลาน ยอดทีมจากอิตาลีไปก่อนถึง 3-0 ในช่วงครึ่งแรก แต่ทัพ "หงส์แดง" ภายใต้การนำของกัปตันทีม สตีเวน เจอร์ราร์ด ได้สร้างปาฏิหาริย์ด้วยการยิง 3 ประตูรวดในช่วงเวลาเพียง 6 นาทีของครึ่งหลัง พลิกกลับมาตีเสมอเป็น 3-3 ได้สำเร็จ ก่อนจะไปเอาชนะได้อย่างระทึกใจในการดวลจุดโทษ พาทีมชูถ้วยแชมป์ยุโรปสมัยที่ 5 อย่างยิ่งใหญ่ และได้รับกรรมสิทธิ์ครอบครองถ้วยใบเดิมแบบถาวร</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5FZUEKohas3F5QdNCIY0aKL32pYEfM955bu1aT6c4nWg7UTL8Al4an.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์พรีเมียร์ลีก ฤดูกาล 2019-20 (สิ้นสุดการรอคอย 30 ปีที่แสนยาวนาน)</h2>
+      <p>นี่คือแชมป์ลีกสูงสุดที่แฟนบอลหงส์แดงทั่วโลกรอคอยมาอย่างยาวนานถึง 3 ทศวรรษ ภายใต้การคุมทีมของ เยอร์เกน คล็อปป์ (Jürgen Klopp) ลิเวอร์พูลโชว์ฟอร์มได้อย่างแข็งแกร่งและไร้เทียมทาน โกยแต้มไปได้สูงถึง 99 คะแนน ทิ้งห่างทีมอันดับสองอย่างขาดลอย พวกเขาสร้างสถิติชนะรวดในบ้าน 18 นัดติดต่อกัน และเป็นการผงาดคว้าแชมป์ "พรีเมียร์ลีก" ได้เป็นสมัยแรกนับตั้งแต่มีการเปลี่ยนชื่อลีกในปี 1992 อย่างสมบูรณ์แบบและยิ่งใหญ่</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://i.dailymail.co.uk/1s/2019/06/01/22/14245978-7093691-image-m-123_1559424021314.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2018-19 (แชมป์ยุโรปสมัยที่ 6 และปาฏิหาริย์ที่แอนฟิลด์)</h2>
+      <p>เส้นทางสู่แชมป์ยุโรปสมัยที่ 6 ของลิเวอร์พูลเต็มไปด้วยความทรงจำอันน่าเหลือเชื่อ โดยเฉพาะในรอบรองชนะเลิศที่พวกเขาบุกไปพ่าย บาร์เซโลน่า ก่อนในนัดแรก 3-0 แต่กลับมาสร้าง "ปาฏิหาริย์ที่แอนฟิลด์" ด้วยการเปิดบ้านถล่มคืน 4-0 พลิกนรกทะลุเข้าชิงชนะเลิศไปพบกับ ท็อตแน่ม ฮ็อทสเปอร์ ก่อนจะเอาชนะไปได้ 2-0 ถือเป็นการชดเชยความผิดหวังจากนัดชิงปีก่อนหน้าได้อย่างงดงาม และเป็นจุดเริ่มต้นของการกวาดแชมป์รายการสำคัญของทีมชุดยุคทองภายใต้การนำทัพของคล็อปป์</p>
+    </div>
+</div>
+</section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #00ac09;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

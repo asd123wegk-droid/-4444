@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal FC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(54, 0, 0);
+      }
+
+      .navbar {
+        background-color: rgb(54, 0, 0);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #ffffff;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(43, 0, 0) 0%, rgba(43, 0, 0, 0.6) 50%, rgba(43, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="data:image/png;base64,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"
+      width="60" ><span>Arsenal FC</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html" class="active">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+      
+    </ul>
+    
+    </nav>
+
+
+    <header class="hero">
+      <img src="../../img/team/Arsenal FC.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>Arsenal FC<br><span style="color: #b30000; animation: blinking 1s step-start infinite;">ตำนานปืนใหญ่</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่ของทัพ เดอะ กันเนอร์ส<br>เรื่องราวของแชมป์ลีกไร้พ่าย (The Invincibles) และเหล่าตำนานนักเตะที่ยิ่งใหญ่ที่สุดตลอดกาล</p>
+      <a href="#history" class="btn-primary" style="background-color: #b30000;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+    <div class="team-badge">
+    <img src="https://freepngimg.com/thumb/premier_league/88248-trophy-league-city-premier-award-champions-fc.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Premier League</span>
+  </div>
+  
+    <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/First_Division_%28pre_1992%29_Trophy.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>First Division</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://static.wixstatic.com/media/70fb8e_54cbc92051994cb69b5ad2187d56e788~mv2.png/v1/fill/w_526,h_576,al_c,lg_1,q_85,enc_avif,quality_auto/70fb8e_54cbc92051994cb69b5ad2187d56e788~mv2.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FA Cup</span>
+  </div>
+
+
+    <div class="team-badge">
+    <img src="https://sortitoutsi.b-cdn.net/uploads/trophy/1301395.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Cup Winners' Cup</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://i.namu.wiki/i/Hr1BBmoitsf_MMoK-0uyY3ewrfoX4na3iciOTrvNKtjd73fpL2v-Aj3b-hAmqJj-8P3j3fCmVCH53WLiXwOq1Q.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>League Cup / EFL Cup</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://tropheesdufoot.wordpress.com/wp-content/uploads/2020/09/uefa-cevf.png?w=200" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Inter-Cities Fairs Cup</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://i.namu.wiki/i/I-GMQ-NCtNTkCg9I8mwI1dgpeXp8JkH6yIOedjn6P81-5qNLM7_AbyJZyPNRG6-Eg3SfXBgoya98zDdCCQ3FDg.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Community Shield</span>
+  </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://s.france24.com/media/display/b885ca62-0987-11e9-9ebc-005056a964fe/w:1024/p:16x9/henry-arsenal-m.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Thierry Henry</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQta7JHaHKMk0dSMHMLGnM8VSTQLTyTxEEbQWKWOjAn812LfeU98Uu2AZo&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Dennis Bergkamp</h4><p style="color: #ffffff54;">กองหน้าตัวต่ำ / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd4qa20bY3PAQChgoQ2oJ-azIZin_IE8Vt3DZfamtVN279dPzKpVrH4WM&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Tony Adams</h4><p style="color: #ffffff54;">กองหลัง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://www.mediastorehouse.com.au/p/5/legends/ex-players-vieira-patrick/patrick-vieira-arsenal-gary-flitcroft-blackburn-361244.jpg.webp'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Patrick Vieira</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviLkFhJIqxH2KpN9kiF9g-hQmSS31NXZWUF5Pynev5Q&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ian Wright</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ClDFOnQ6VmxX65NBwnhsv21wSS9It81S4z-LrUGFTeGIzp8GiXmd1xh6&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Robert Pires</h4><p style="color: #ffffff54;">ปีกซ้าย / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://playonpro.net/wp-content/uploads/2022/05/p9.png'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>David Seaman</h4><p style="color: #ffffff54;">ผู้รักษาประตู</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmqAn8GmZCSkrXYkIbCv7xOVqlsW91oiwl1KQKTSjSj3Wo1OjH-jDjCz0&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Liam Brady</h4><p style="color: #ffffff54;">กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://static.standard.co.uk/s3fs-public/thumbnails/image/2012/01/03/09/solcampbell31-415.jpg?width=1200&auto=webp&quality=75&crop=5:3,smart'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Sol Campbell</h4><p style="color: #ffffff54;">กองหลัง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzfhdPWdHPKrr4aYuYsrk531KwWab2RnC_h8QmsVsKg&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Freddie Ljungberg</h4><p style="color: #ffffff54;">ปีกขวา / กองกลางริมเส้น</p></div></div>
+
+  </div>
+</section>
+
+    <h2 class="section-title">เกมประวัติศาสตร์</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0aYPGT5HwojPQPhzSnShFKqrYHCMES2aM_QsDJBbFa0r2D86mxo_ny1Xe&s=10"  class="image">
+    <div class="text-content">
+      <h2>แชมป์พรีเมียร์ลีก ฤดูกาล 2003-04 (ตำนานแชมป์ไร้พ่าย - The Invincibles)</h2>
+      <p>นี่คือความสำเร็จที่ยิ่งใหญ่และโด่งดังที่สุดของสโมสร ภายใต้การคุมทีมของ อาร์แซน เวนเกอร์ ขุมกำลังชุดนั้นนำโดย เธียร์รี่ อองรี, ปาทริค วิเอร่า และ เดนนิส เบิร์กแคมป์ ได้สร้างประวัติศาสตร์คว้าแชมป์ลีกโดย "ไม่แพ้ใครเลยตลอด 38 นัด" (ชนะ 26 เสมอ 12) ซึ่งเป็นสถิติที่ยังไม่มีทีมไหนในยุคพรีเมียร์ลีกทำได้อีกเลย สโมสรจึงได้รับมอบถ้วยแชมป์พรีเมียร์ลีกแบบพิเศษที่เป็น "สีทอง" เพื่อเป็นเกียรติแก่ความยิ่งใหญ่นี้</p>
+    </div>
+</div>
+</section>
+
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://t1.blockdit.com/photos/2023/12/6587b363e27e05777f95640b_800x0xcover_GVK4AIC3.jpg"  class="image">
+    <div class="text-content">
+      <h2>แชมป์ดิวิชั่น 1 ฤดูกาล 1988-89 (ปาฏิหาริย์ที่แอนฟิลด์)</h2>
+      <p>หนึ่งในการคว้าแชมป์ลีกที่ดราม่าและบีบหัวใจที่สุดในประวัติศาสตร์ฟุตบอลอังกฤษ อาร์เซนอลต้องบุกไปเยือนคู่แข่งแย่งแชมป์อย่าง ลิเวอร์พูล ในนัดสุดท้ายของฤดูกาล และจำเป็นต้องชนะด้วยผลต่าง 2 ประตูขึ้นไปเท่านั้น เกมทำท่าจะจบด้วยสกอร์ 1-0 ซึ่งไม่พอต่อการเป็นแชมป์ แต่แล้วในนาทีสุดท้ายของช่วงทดเวลาบาดเจ็บ (นาทีที่ 90+1) ไมเคิล โทมัส ได้หลุดเข้าไปยิงประตูที่ 2 พาทีมคว้าแชมป์ลีกปาดหน้าลิเวอร์พูลไปแบบช็อกแฟนบอลเจ้าถิ่นทั้งสนาม</p>
+    </div>
+</div>
+</section>
+
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgoBLO_5mYaw8m0kHnSjEmeeCOBKeEA9dQNDaDvn22PEwsPi1E4uumDc0&s=10"  class="image">
+    <div class="text-content">
+      <h2>เจ้าแห่งแชมป์เอฟเอคัพ (FA Cup) - สถิติสูงสุด 14 สมัย</h2>
+      <p>แม้อันนี้จะไม่ได้เจาะจงแค่ฤดูกาลเดียว แต่ความสำเร็จในถ้วยใบนี้คือสัญลักษณ์ของสโมสรที่โด่งดังไปทั่วโลก อาร์เซนอลคือ "ราชาแห่งฟุตบอลถ้วย" อย่างแท้จริง ด้วยสถิติการคว้าแชมป์เอฟเอคัพ (ฟุตบอลถ้วยที่เก่าแก่ที่สุดในโลก) มากที่สุดในประวัติศาสตร์ถึง 14 สมัย โดยเฉพาะในช่วงที่อาร์แซน เวนเกอร์ คุมทีม เขาสามารถพาทีมชูถ้วยใบนี้ได้ถึง 7 ครั้ง ซึ่งถือเป็นหน้าประวัติศาสตร์ที่ยากจะมีใครมาทำลายลงได้</p>
+    </div>
+</div>
+</section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #b30000;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

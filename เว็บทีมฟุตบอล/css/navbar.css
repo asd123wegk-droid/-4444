@@ -1,0 +1,124 @@
+/* แถบเมนูด้านบนสุดแบบติดขอบจอ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(5, 10, 21, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* โลโก้เว็บฝั่งซ้าย */
+.logo {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ข้อความเน้นคำว่า FOOTBALL */
+.logo span { 
+  font-weight: 700; 
+  letter-spacing: 1px; 
+}
+
+/* ข้อความรองคำว่า LEGENDS */
+.logo small { 
+  font-weight: 300; 
+  font-size: 12px; 
+  color: #8ba1cf; 
+}
+
+/* กลุ่มข้อความเมนูนำทางแนวนอน */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* ลิงก์เมนูนำทางปกติ */
+.nav-links a {
+  color: #a0aec0;
+  font-size: 15px;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+/* สีลิงก์เมื่อนำเมาส์ไปชี้ หรือกำลังใช้งานอยู่ */
+.nav-links a:hover, .nav-links a.active {
+  color: #ffffff;
+}
+
+/* ขีดเส้นใต้ลิงก์ที่กำลังใช้งานอยู่ */
+.nav-links a.active {
+  border-bottom: 2px solid #ffffff;
+}
+
+/* ไอคอนแว่นขยายค้นหา */
+.search-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* กลุ่มเมนู Dropdown หลัก */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* กล่องเมนูย่อย Dropdown (ซ่อนไว้เป็นค่าเริ่มต้น) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0b1120;
+  min-width: 220px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  z-index: 101;
+}
+
+/* ลิงก์รายชื่อทีมในกล่องเมนูย่อย */
+.dropdown-content a {
+  color: #a0aec0;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  border-bottom: none;
+  transition: all 0.3s ease;
+}
+
+/* เมื่อนำเมาส์ไปชี้ลิงก์รายชื่อทีม */
+.dropdown-content a:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding-left: 25px;
+}
+
+/* แสดงกล่องเมนูย่อยเมื่อนำเมาส์ชี้ที่เมนูหลัก */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+.my-footer {
+  width: 100%;
+  background-color: rgba(20, 21, 24, 0.9);
+  color: #ffffff;
+  padding: 40px 20px; /* ใช้ padding ในการกำหนดความสูงแทน height */
+  text-align: center;
+  
+  /* เพิ่ม margin-top ไว้ดันระยะห่างจากเนื้อหาด้านบน (ปรับได้ตามต้องการ) */
+  margin-top: 50px; 
+}

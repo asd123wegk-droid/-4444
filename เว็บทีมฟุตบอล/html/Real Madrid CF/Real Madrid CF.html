@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid CF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(173, 173, 173);
+      }
+
+      .navbar {
+        background-color: rgba(109, 109, 109, 0.897);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #ffee00;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(92, 92, 92) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="data:image/png;base64,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"
+      width="60" ><span>Real Madrid CF</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html" class="active">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <img src="../../img/team/real madrid.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>Real Madrid CF<br><span style="color: #ffee00; animation: blinking 1s step-start infinite;">ตำนานราชันชุดขาว</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่แห่งซานติอาโก้ เบร์นาเบว<br>เรื่องราวของจ้าวแห่งยุโรปผู้ครอบครองถ้วยแชมเปียนส์ลีกมากที่สุด และเหล่าตำนานนักเตะที่ยิ่งใหญ่ที่สุดตลอดกาล</p>
+      <a href="#history" class="btn-primary" style="background-color: #ffee00;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+<div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/LaLiga.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>La Liga</span>
+  </div>
+  
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/RFEF_-_Copa_del_Rey.svg/500px-RFEF_-_Copa_del_Rey.svg.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Copa del Rey</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/SupercopaEspa%C3%B1a.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Supercopa de España</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://www.pngarts.com/files/5/UEFA-Champions-League-Trophy-PNG-Image.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Champions League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://www.sportarena.gr/image/catalog/UEFA-EL-150-AP_FRONT_1_1000px.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Europa League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Supercoppa_UEFA.svg/330px-Supercoppa_UEFA.svg.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Super Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-clipart/20250623/original/pngtree-fifa-club-world-cup-trophy-png-image_21226694.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FIFA Club World Cup</span>
+  </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Cristiano\ Ronaldo\ real.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Cristiano Ronaldo</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์) / ปีก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Alfredo\ Di\ Stéfano.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Alfredo Di Stéfano</h4><p style="color: #ffffff54;">กองหน้า / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Raúl\ González.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Raúl González</h4><p style="color: #ffffff54;">กองหน้าตัวต่ำ / สไตรเกอร์</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Zinedine\ Zidane.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Zinedine Zidane</h4><p style="color: #ffffff54;">กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Iker\ Casillas.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Iker Casillas</h4><p style="color: #ffffff54;">ผู้รักษาประตู</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Sergio\ Ramos.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Sergio Ramos</h4><p style="color: #ffffff54;">กองหลัง (เซ็นเตอร์แบ็ค / แบ็คขวา)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Roberto\ Carlos.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Roberto Carlos</h4><p style="color: #ffffff54;">กองหลัง (แบ็คซ้าย)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Ferenc\ Puskás.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ferenc Puskás</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Luka\ Modrić.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Luka Modrić</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('./img/Karim\ Benzema.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Karim Benzema</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+
+  </div>
+</section>
+
+    <h2 class="section-title">เกมประวัติศาสตร์</h2>
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://image.khobsanam.com/contents/2018/05/Real-Madriddd.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2013-14 (La Décima - การรอคอยที่สิ้นสุด)</h2>
+      <p>การคว้าแชมป์ยุโรปสมัยที่ 10 หรือ "ลา เดซิมา" (La Décima) ที่แฟนบอลราชันชุดขาวรอคอยมาอย่างยาวนานถึง 12 ปี นัดชิงชนะเลิศที่กรุงลิสบอนเต็มไปด้วยความดราม่า เมื่อพวกเขาตามหลังคู่ปรับร่วมเมืองอย่าง แอตเลติโก มาดริด จนถึงช่วงทดเวลาบาดเจ็บ ก่อนที่ เซร์คิโอ รามอส จะโหม่งตีเสมอในนาทีที่ 92:48 ต่อลมหายใจให้ทีม ก่อนจะไปรัวยิงในช่วงต่อเวลาพิเศษชนะไป 4-1 สร้างหน้าประวัติศาสตร์อันยิ่งใหญ่ได้อย่างสมบูรณ์แบบ</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018_%281%29.jpg/330px-Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018_%281%29.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2017-18 (แฮตทริกเจ้ายุโรปและการตีลังกายิงของเบล)</h2>
+      <p>บทสรุปของความยิ่งใหญ่ในยุคทองที่มี ซีเนดีน ซีดาน เป็นกุนซือ และ คริสเตียโน่ โรนัลโด้ เป็นดาวซัลโว เรอัล มาดริด สร้างประวัติศาสตร์เป็นสโมสรแรกในยุคแชมเปียนส์ลีกที่สามารถป้องกันแชมป์ได้ถึง 3 สมัยติดต่อกัน นัดชิงชนะเลิศพวกเขาเอาชนะ ลิเวอร์พูล 3-1 โดยมีไฮไลต์สำคัญคือการทำประตูด้วยลูกตีลังกายิงสุดสวยของ แกเร็ธ เบล ตอกย้ำความเป็น "ราชาแห่งยุโรป" ด้วยการคว้าถ้วยใบใหญ่เป็นสมัยที่ 13</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Chelsea_Champions_League_Winners_2012.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ลาลีกา ฤดูกาล 2011-12 (แชมป์ลีก 100 คะแนนและสถิติยิงทะลุร้อย)</h2>
+      <p>หนึ่งในฤดูกาลที่เรอัล มาดริด โชว์ฟอร์มในลีกประเทศได้อย่างแข็งแกร่งและดุดันที่สุด ภายใต้การคุมทีมของ โชเซ่ มูรินโญ่ พวกเขาสามารถทลายการผูกขาดของบาร์เซโลน่ายุคต่างดาวลงได้สำเร็จ พร้อมกับสร้างสถิติประวัติศาสตร์ของฟุตบอลสเปนด้วยการเก็บได้ถึง 100 คะแนนเต็ม และทำประตูรวมในลีกได้สูงถึง 121 ประตู ซึ่งยังคงเป็นสถิติสูงสุดตลอดกาลของลาลีกามาจนถึงปัจจุบัน</p>
+    </div>
+</div>
+</section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #ffee00;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris Saint-Germain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(10, 0, 99);
+      }
+
+      .navbar {
+        background-color: rgba(4, 0, 61, 0.897);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #b30000;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 17, 116, 0.904) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="data:image/png;base64,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"
+      width="60" ><span>Paris Saint-Germain</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html" class="active">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+    </ul>
+    
+    </nav>
+
+
+    <header class="hero">
+      <img src="../../img/team/ปารีส.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>Paris Saint-Germain<br><span style="color: #b30000; animation: blinking 1s step-start infinite;">ตำนานเปแอสเช</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่แห่งปาร์กเดแพร็งส์<br>เรื่องราวของจ้าวแห่งลีกเอิงผู้กวาดความสำเร็จมากมาย และเหล่าตำนานนักเตะที่ยิ่งใหญ่ที่สุดตลอดกาล</p>
+      <a href="#history" class="btn-primary" style="background-color: #0003b3;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+<div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Premier_league_trophy_icon.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Premier League</span>
+  </div>
+  
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/FA_Cup.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FA Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://i.namu.wiki/i/Hr1BBmoitsf_MMoK-0uyY3ewrfoX4na3iciOTrvNKtjd73fpL2v-Aj3b-hAmqJj-8P3j3fCmVCH53WLiXwOq1Q.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>EFL Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://www.pngarts.com/files/5/UEFA-Champions-League-Trophy-PNG-Image.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Champions League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://www.sportarena.gr/image/catalog/UEFA-EL-150-AP_FRONT_1_1000px.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Europa League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://sortitoutsi.b-cdn.net/uploads/trophy/1301397.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Super Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-vector/20250808/ourmid/pngtree-fifa-club-world-cup-trophy-png-image_16782183.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FIFA Club World Cup</span>
+  </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/01/11/13/Zlatan-Ibrahimovic.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Zlatan Ibrahimović</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://cdn.antaranews.com/cache/1200x800/2022/03/13/PSG-17601.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Kylian Mbappé</h4><p style="color: #ffffff54;">กองหน้า / ปีก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Edinson_Cavani%2C_PSG.JPG/250px-Edinson_Cavani%2C_PSG.JPG'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Edinson Cavani</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThzdXywwboI6TWmn7MVMbtBj6Y10OvR9c-RDEvqm81-w&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Neymar Jr.</h4><p style="color: #ffffff54;">กองหน้าตัวต่ำ / ปีก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJ0COhDqng2BQUinAZhg4FFj3Ch4sNe_d2MOCPklBg4x5HY4ftKkejSR3&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ronaldinho</h4><p style="color: #ffffff54;">กองกลางตัวรุก / ปีกซ้าย</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsLIjwezHTQVyZgP3H8yCEDZuqqgTBRATCaAYYkj50eyg9v0Yu5nSlBxU&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Thiago Silva</h4><p style="color: #ffffff54;">กองหลัง (เซ็นเตอร์แบ็ค)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSmar3JcZRAKwUik37sDaJBL2KXGoLikA3ornqzEmaQA&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Marco Verratti</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZvq3cKahd3RKJXjIWvaWq7WXJwdHOGVaZ5eaEpZqLOYQXz1wjL5KW9q0&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Pedro Miguel Pauleta</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://billetterie.psg.fr/media/paris-susic-old5.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Safet Sušić</h4><p style="color: #ffffff54;">กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMEiw3glCcqPYQtyCvSfXyYy54UewSnp7SlDol5UFanabaoPFKpCcmkA&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Bernard Lama</h4><p style="color: #ffffff54;">ผู้รักษาประตู</p></div></div>
+
+  </div>
+</section>
+
+    <h2 class="section-title">เกมประวัติศาสตร์</h2>
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://i2-prod.mirror.co.uk/article37214892.ece/ALTERNATES/s1200e/0_GettyImages-2197411599.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าคัพวินเนอร์สคัพ ฤดูกาล 1995-96 (แชมป์ยุโรปประวัติศาสตร์หนึ่งเดียวของสโมสร)</h2>
+      <p>แม้เปแอสเชจะเป็นมหาอำนาจในยุคปัจจุบัน แต่ถ้วยยุโรปใบเมเจอร์เพียงใบเดียวที่พวกเขาเคยคว้ามาได้ต้องย้อนกลับไปในยุค 90s ภายใต้การนำทัพของ ยูริ จอร์เกฟฟ์ และ บรูโน เอ็นก็อตตี้ พวกเขาเอาชนะ ราปิด เวียนนา 1-0 ในนัดชิงชนะเลิศ คว้าแชมป์ยูฟ่าคัพวินเนอร์สคัพมาครองได้อย่างยิ่งใหญ่ ถือเป็นเกียรติยศสูงสุดบนเวทียุโรปที่แฟนบอลปารีเซียงยังคงภาคภูมิใจมาจนถึงทุกวันนี้</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://assets.goal.com/images/v3/blt7402c7a45f9f5978/bfa69d547aff89dcef27882ee64fef348d861102.png?auto=webp&format=pjpg&width=3840&quality=60" class="image">
+    <div class="text-content">
+      <h2>แชมป์ลีกเอิง ฤดูกาล 2012-13 (จุดเริ่มต้นความยิ่งใหญ่แห่งยุคกลุ่มทุนกาตาร์)</h2>
+      <p>นี่คือฤดูกาลแห่งการพลิกโฉมหน้าประวัติศาสตร์ของสโมสรอย่างแท้จริง หลังจากกลุ่มทุน QSI เข้ามาเทคโอเวอร์ เปแอสเชได้ดึงตัวซูเปอร์สตาร์อย่าง ซลาตัน อิบราฮิโมวิช, ติอาโก้ ซิลวา และ เดวิด เบ็คแฮม มาร่วมทีม ก่อนจะผงาดคว้าแชมป์ลีกเอิงได้เป็นครั้งแรกในรอบ 19 ปี ถือเป็นการจุดประกายยุคทองและสถาปนาตนเองขึ้นเป็นมหาอำนาจลูกหนังเบอร์หนึ่งของฝรั่งเศสอย่างเต็มตัว</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://www.thairath.co.th/sport/_next/image?url=https%3A%2F%2Fstatic.thairath.co.th%2Fmedia%2FdFQROr7oWzulq5Fa6rVzeM9l8H3vuQutFMk9YT8xDTxE2gGvRbs5ksnFijCdaCs40vE.jpg&w=3840&q=75" class="image">
+    <div class="text-content">
+      <h2>แชมป์ลีกเอิง ฤดูกาล 2019-20 (การกวาด 4 แชมป์ในประเทศและการทะลุชิงเจ้ายุโรป)</h2>
+      <p>ฤดูกาลที่เปแอสเชโชว์ฟอร์มได้ร้อนแรงและเข้าใกล้ความฝันสูงสุดมากที่สุด นำทัพโดย 2 แนวรุกระดับโลกอย่าง เนย์มาร์ และ คีลิยัน เอ็มบัปเป้ พวกเขาประกาศศักดาด้วยการกวาดแชมป์ภายในประเทศครบทั้ง 4 รายการ (ลีกเอิง, คูป เดอ ฟรองซ์, คูป เดอ ลา ลีก และ โทรเฟ่ เดส์ ช็องปิยงส์) พร้อมกับทะลุเข้าชิงชนะเลิศยูฟ่าแชมเปียนส์ลีกได้เป็นครั้งแรกในประวัติศาสตร์สโมสร แม้สุดท้ายจะพ่ายแพ้ในนัดชิง แต่นี่คือขุมกำลังชุดที่แข็งแกร่งและเป็นที่จดจำที่สุดยุคหนึ่งของสโมสร</p>
+    </div>
+</div>
+</section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #00137e;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

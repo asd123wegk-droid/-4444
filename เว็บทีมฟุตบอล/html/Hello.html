@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOOTBALL LEGENDS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+  <style>
+    
+    body{
+      background-color: #050a15; 
+    }
+
+    /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+    .hero-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(to right, rgba(5, 10, 21, 1) 0%, rgba(5, 10, 21, 0.6) 50%, rgba(5, 10, 21, 0.1) 100%);
+     z-index: 1;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+    ⚽<span>FOOTBALL</span><br><small>LEGENDS</small>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="Hello.html" class="active">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="./AC Milan/AC Milan.html">AC Milan</a>
+          <a href="./Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="./Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="./FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="./FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="./Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="./Manchester City/Manchester City.html">Manchester City</a>
+          <a href="./Manchester United/Manchester United.html">Manchester United</a>
+          <a href="./Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="./Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="./แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="./ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+    </ul>
+    
+  </nav>
+
+  <header class="hero">
+  <img src="../img/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ.png" alt="Football Legends Banner" class="hero-bg-img">
+  
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>ตำนานลูกหนัง<br><span style="color: #b3a700; animation: blinking 1s step-start infinite;">จากสโมสรระดับโลก</span></h1>
+    <p>รวมเรื่องราวของ 10 สโมสรยักษ์ใหญ่<br>ประวัติทีม นักเตะ แชมป์ และเกมที่โลกไม่มีวันลืม</p>
+    <a href="#history" class="btn-primary">สำรวจสโมสร</a>
+  </div>
+</header>
+
+  <main class="container">
+
+    <section class="team-logos-row">
+  
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" alt="แมนฯ ซิตี้" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>แมนฯ ซิตี้</span>
+  </div>
+  
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="แมนฯ ยูไนเต็ด" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>แมนฯ ยูไนเต็ด</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="เปแอสเช" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>เปแอสเช</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="บาร์เซโลนา" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>บาร์เซโลนา</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="เรอัล มาดริด" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>เรอัล มาดริด</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="เชลซี" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>เชลซี</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" alt="อาร์เซนอล" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>อาร์เซนอล</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" alt="ลิเวอร์พูล" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>ลิเวอร์พูล</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg" alt="เอซี มิลาน" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>เอซี มิลาน</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" alt="บาเยิร์น" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>บาเยิร์น</span>
+  </div>
+
+</section>
+
+    <section id="history" class="section-block">
+      <h2 class="section-title">ประวัติทีม</h2>
+      <div class="grid-5">
+
+  <div class="card history-card">
+    <div class="history-bg" style="background-image: linear-gradient(to bottom, rgba(11,17,32,0.2), #0b1120), url('https://mpics.mgronline.com/pics/Images/565000004934201.JPEG'); background-size: cover; background-position: center;"></div>
+    <div class="history-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" alt="Man City" style="width: 100%; height: 100%; object-fit: contain; padding: 12px;">
+    </div>
+    <h3>แมนเชสเตอร์ ซิตี้</h3>
+    <p>ก่อตั้งในปี 1880 ก่อนก้าวขึ้นมาเป็นมหาอำนาจลูกหนังยุคใหม่ที่ครองความยิ่งใหญ่ในเกาะอังกฤษภายใต้เป๊ป กวาร์ดิโอลา</p>
+    <a href="./Manchester City/Manchester City.html" class="read-more">อ่านต่อ ➔</a>
+  </div>
+
+  <div class="card history-card">
+    <div class="history-bg" style="background-image: linear-gradient(to bottom, rgba(11,17,32,0.2), #0b1120), url('https://www.khaosod.co.th/wpapp/uploads/2023/11/%E0%B9%81%E0%B8%A1%E0%B8%99%E0%B8%A2%E0%B8%B9-%E0%B8%97%E0%B8%B5%E0%B8%A1-53.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="history-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Man Utd" style="width: 100%; height: 100%; object-fit: contain; padding: 10px;">
+    </div>
+    <h3>แมนเชสเตอร์ ยูไนเต็ด</h3>
+    <p>สโมสรที่ประสบความสำเร็จสูงสุดในอังกฤษ และมีฐานแฟนบอลที่ยิ่งใหญ่ที่สุดแห่งหนึ่งของโลก</p>
+    <a href="./Manchester United/Manchester United.html" class="read-more">อ่านต่อ ➔</a>
+  </div>
+
+  <div class="card history-card">
+    <div class="history-bg" style="background-image: linear-gradient(to bottom, rgba(11,17,32,0.2), #0b1120), url('https://preview.redd.it/paris-saint-germain-v0-h5uow2bkvk5f1.jpeg?width=640&crop=smart&auto=webp&s=54f3627c757f2be8b511ae04c07eed9ece14b0b6'); background-size: cover; background-position: center;"></div>
+    <div class="history-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="PSG" style="width: 100%; height: 100%; object-fit: contain; padding: 10px;">
+    </div>
+    <h3>ปารีส แซงต์-แชร์กแมง</h3>
+    <p>ทีมยักษ์ใหญ่แห่งแดนน้ำหอมที่ก่อตั้งในปี 1970 รวบรวมซูเปอร์สตาร์ระดับโลกไว้มากมาย</p>
+    <a href="./Paris Saint-Germain/Paris Saint-Germain.html" class="read-more">อ่านต่อ ➔</a>
+  </div>
+
+  <div class="card history-card">
+    <div class="history-bg" style="background-image: linear-gradient(to bottom, rgba(11,17,32,0.2), #0b1120), url('https://www.siamsport.co.th/static/bc754372-9e37-4838-8c2a-5a789e01fe4a.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="history-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Barcelona" style="width: 100%; height: 100%; object-fit: contain; padding: 10px;">
+    </div>
+    <h3>บาร์เซโลนา</h3>
+    <p>ยึดมั่นในปรัชญา "Més que un club" (เป็นมากกว่าสโมสร) โด่งดังจากสไตล์การเล่นติกิ-ตากาอันสวยงาม</p>
+    <a href="./FC Barcelona/FC Barcelona.html" class="read-more">อ่านต่อ ➔</a>
+  </div>
+
+  <div class="card history-card">
+    <div class="history-bg" style="background-image: linear-gradient(to bottom, rgba(11,17,32,0.2), #0b1120), url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="history-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" style="width: 100%; height: 100%; object-fit: contain; padding: 10px;">
+    </div>
+    <h3>เรอัล มาดริด</h3>
+    <p>เจ้าของฉายา "ราชันชุดขาว" สโมสรที่ประสบความสำเร็จมากที่สุดในประวัติศาสตร์ยูฟ่าแชมเปียนส์ลีก</p>
+    <a href="./Real Madrid CF/Real Madrid CF.html" class="read-more">อ่านต่อ ➔</a>
+  </div>
+
+
+</div>
+    </section>
+
+    <section id="players" class="section-block">
+      <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+      <div class="grid-10">
+        
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://cdn.verticalvideo.premierleaguedigital.com/games/6a9c15755566cb2f407829fb3637de52/6860e1a939705b1efcf0892e_VerticalTwoByThree_298d5617-9a68-4072-af21-59fd62d6d5c0.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>E. Haaland</h4><p>กองหน้า</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://i.guim.co.uk/img/media/7a67c4fcd99e75b5afbbb7c241465452ebb496c0/94_266_2743_1646/master/2743.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=0fb823eeaeeed186ad52fc93e873aa4a'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>B. Fernandes</h4><p>กองกลาง</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://assets.realmadrid.com/is/image/realmadrid/ND-LIGA-J22-RM-RAYO-MBAPPE_1VC7172?$Mobile$&fit=wrap'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>K. Mbappé</h4><p>กองหน้า</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/2019147200143_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_2462_-_B70I0762_%28cropped%29_%28cropped%29.jpg/250px-2019147200143_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_2462_-_B70I0762_%28cropped%29_%28cropped%29.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>R.Lewandowski</h4><p>กองหน้า</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://img.allfootballapp.com/www/M00/2D/97/720x-/-/-/CgAGVmJ-Z4uAOHQ_AApG7y6xLRo534.png.webp'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>V. Júnior</h4><p>กองหน้า</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/df/Enzo_Fern%C3%A1ndez_WC2022.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>E. Fernández</h4><p>กองกลาง</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://ichef.bbci.co.uk/ace/standard/969/cpsprodpb/03a8/live/991b5c60-b718-11ef-8fcc-45d83a006c6f.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>M. Ødegaard</h4><p>กองกลาง</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0LIfxoTCuFgLIrK0LMUySFDw10yFZCQ4yTN3w4pFrUrHoSVUXQEp6QikR&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>M. Salah</h4><p>กองหน้า</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://external-preview.redd.it/saber-desfarges-rafael-leao-is-in-the-viewfinder-of-psg-v0-U-5Vt1y-6o3QIsXLlpIv7q5x9RMO7aMVJzft4NP3sR0.jpg?width=640&crop=smart&auto=webp&s=f9a508d4d1af140afad5505c63e4cce4898abb7e'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>R. Leão</h4><p>กองหน้า</p></div></div>
+        <div class="player-card"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoncHhjVxjvJrZd7Mt7i_G-Lq-onSUmw2Z0Vh4JbOY2fylJBolZQ-q_qQ&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>H. Kane</h4><p>กองหน้า</p></div></div>
+      </div>
+    </section>
+
+    <section id="matches" class="section-block">
+
+      <h2 class="section-title">เกมประวัติศาสตร์</h2>
+      <div class="grid-5">
+
+        <div class="match-card">
+          <div class="match-img" style="background-image: url('https://i.ytimg.com/vi/frc1f7aFw-k/maxresdefault.jpg'); background-size: cover; background-position: center;">
+          </div>
+          <div class="match-content">
+            <h3>Istanbul 2005</h3>
+            <h4>ลิเวอร์พูล 3-3 เอซี มิลาน</h4>
+            <p>ลิเวอร์พูลพลิกกลับมาหลังจากตามหลังสุดระทึก</p>
+          </div>
+        </div>
+
+        <div class="match-card">
+          <div class="match-img" style="background-image: url('https://static.thairath.co.th/media/dFQROr7oWzulq5FZWhUAx49MDst6XMCEfMMSTJvIuHqMp1o86PuFhPueWHcMIb1bb1R.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="match-content">
+            <h3>หัตถ์พระเจ้า 1986</h3>
+            <h4>มาราโดนา ใช้มือปัดบอลเข้าประตู</h4>
+            <p>เลี้ยงหลบครึ่งสนามเข้าไปยิง ช่วยอาร์เจนตินาชนะอังกฤษในฟุตบอลโลก</p>
+          </div>
+        </div>
+
+        <div class="match-card">
+          <div class="match-img" style="background-image: url('https://f.ptcdn.info/399/019/000/1401090822-sd-o.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="match-content">
+            <h3>ค่ำคืนที่คัมป์ นู 1999</h3>
+            <h4>แมนฯ ยูไนเต็ด โดนบาเยิร์นนำจนถึงนาที 90</h4>
+            <p>แต่รัวยิง 2 ประตูในช่วงทดเจ็บ พลิกชนะ 2-1 คว้าทริปเปิลแชมป์</p>
+          </div>
+        </div>
+        <div class="match-card">
+          <div class="match-img" style="background-image: url('https://thumbsup.in.th/wp-content/uploads/2014/07/tumblr_n8f721uo1m1tga27vo1_1280.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="match-content">
+            <h3>ช็อกโลกที่บราซิล 2014</h3>
+            <h4>บราซิล เจ้าภาพฟุตบอลโลก โดน เยอรมนี</h4>
+            <p>ถล่มยับเยินคาบ้านด้วยสกอร์ช็อกโลก 1-7 ในรอบรองชนะเลิศ</p>
+          </div>
+        </div>
+        <div class="match-card">
+          <div class="match-img" style="background-image: url('https://gdb.voanews.com/022a0000-0aff-0242-7ce2-08dae12a1bc2_cx0_cy5_cw0_w1200_h630.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="match-content">
+            <h3>นัดชิงในตำนาน 2022</h3>
+            <h4>อาร์เจนตินา เสมอ ฝรั่งเศส</h4>
+            <p>สุดดราม่า 3-3 ใน 120 นาที ก่อนอาร์เจนฯ ชนะจุดโทษ ส่ง เมสซี คว้าแชมป์โลกสมใจ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #b3a700;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

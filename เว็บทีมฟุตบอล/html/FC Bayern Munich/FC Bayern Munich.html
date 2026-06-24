@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Bayern Munich</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(54, 0, 0);
+      }
+
+      .navbar {
+        background-color: rgb(54, 0, 0);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #ffffff;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(39, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="data:image/png;base64,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"
+      width="60" ><span>FC Bayern Munich</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html" class="active">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+    </ul>
+    
+    </nav>
+
+
+    <header class="hero">
+      <img src="../../img/team/บาเยิน.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>FC Bayern Munich<br><span style="color: #b30000; animation: blinking 1s step-start infinite;">ตำนานเสือใต้</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่แห่งแคว้นบาวาเรีย<br>เรื่องราวของจ้าวแห่งบุนเดสลีกาผู้ครองแชมป์ยุโรป 6 สมัย และเหล่าตำนานนักเตะที่ยิ่งใหญ่ที่สุดตลอดกาล</p>
+      <a href="#history" class="btn-primary" style="background-color: #b30000;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+<div class="team-badge">
+    <img src="https://tmssl.akamaized.net//images/erfolge/verybigquad/10.png?lm=1520606996" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>Bundesliga</span>
+  </div>
+  
+  <div class="team-badge">
+    <img src="https://kochundbergfeld.de/wp-content/uploads/2020/11/dfb-pokal-trophaee.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>DFB-Pokal</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Dfl-super-cup-pokal.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>DFL-Supercup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-vector/20251011/ourmid/pngtree-uefa-champions-league-trophy-png-image_17691123.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Champions League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Coppauefa.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Europa League</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/UEFA_-_Super_Cup.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>UEFA Super Cup</span>
+  </div>
+
+  <div class="team-badge">
+    <img src="https://png.pngtree.com/png-clipart/20250623/original/pngtree-fifa-club-world-cup-trophy-png-image_21226694.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FIFA Club World Cup</span>
+  </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo5ZOcNW2QKuneAOQ0DHBHRl8rFmsGwHIGatpz2vzZJw&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Franz Beckenbauer</h4><p style="color: #ffffff54;">กองหลัง (สวีปเปอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gerd_M%C3%BCller_c1973_%28cropped%29.jpg/250px-Gerd_M%C3%BCller_c1973_%28cropped%29.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Gerd Müller</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4iDnq4tPMf6BoTqXBL7YlhtD2x72X5qBDJ1gzTU04Tw&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Thomas Müller</h4><p style="color: #ffffff54;">กองหน้า / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://img.ligaolahraga.com/public/images/news/2026/03/27/pelatih-veteran-jerman-bandingkan-manuel-neuer-dengan-messi-cr7.webp'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Manuel Neuer</h4><p style="color: #ffffff54;">ผู้รักษาประตู</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRger5vPM3UKTfjBQ9hV7XV-12M_yB2qBMl4v_3Sd6hQ&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Philipp Lahm</h4><p style="color: #ffffff54;">กองหลัง (แบ็คขวา)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Persepolis_F.C._VS_FC_Bayern_Munich%2C_13_January_2006_6.jpg/250px-Persepolis_F.C._VS_FC_Bayern_Munich%2C_13_January_2006_6.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Oliver Kahn</h4><p style="color: #ffffff54;">ผู้รักษาประตู</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://ichef.bbci.co.uk/ace/standard/640/cpsprodpb/3C99/production/_103931551_gettyimages-1007288572rummenegge.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Karl-Heinz Rummenigge</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://www.iffhs.com/storage/img/posts/matthaus.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Lothar Matthäus</h4><p style="color: #ffffff54;">กองกลาง / กองหลัง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8dF5km65jUKFn1FNAthrZmajZwHgoI_gK--8rJViXFw&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Bastian Schweinsteiger</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8d/Arjen_Robben.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Arjen Robben</h4><p style="color: #ffffff54;">ปีกขวา / ปีกซ้าย</p></div></div>
+  
+  </div>
+</section>
+
+    <h2 class="section-title">เกมประวัติศาสตร์</h2>
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSur7OSA-ahelMa3ehyzUEI1etFMJ1U9HkywSHo6tNi_g&s=10" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2012-13 (ทริปเปิลแชมป์ประวัติศาสตร์และการล้างแค้นที่เวมบลีย์)</h2>
+      <p>หลังจากฝันสลายในนัดชิงชนะเลิศที่บ้านเกิดของตัวเองในปีก่อนหน้า บาเยิร์น มิวนิก ภายใต้การคุมทีมของ จุ๊ปป์ ไฮย์เกส (Jupp Heynckes) กลับมาอย่างยิ่งใหญ่และแข็งแกร่งกว่าเดิม พวกเขาเอาชนะโบรุสเซีย ดอร์ทมุนด์ คู่ปรับร่วมลีกไปได้ 2-1 ในนัดชิงชนะเลิศที่สนามเวมบลีย์ คว้าแชมป์ยุโรปสมัยที่ 5 พร้อมกับสร้างประวัติศาสตร์เป็นสโมสรแรกจากเยอรมนีที่สามารถคว้า "ทริปเปิลแชมป์" (ยูฟ่าแชมเปียนส์ลีก, บุนเดสลีกา และเดเอฟเบ โพคาล) ได้ในฤดูกาลเดียวอย่างยิ่งใหญ่</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://www.khaosod.co.th/wpapp/uploads/2020/08/000_1WP4AC.jpg" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2019-20 (ฟอร์มไร้เทียมทานสู่การกวาด 6 แชมป์รวด)</h2>
+      <p>ฤดูกาลที่ทัพ "เสือใต้" โชว์ฟอร์มได้ดุดันและไร้เทียมทานที่สุดในยุคหลัง ภายใต้การคุมทีมของ ฮันซี่ ฟลิค (Hansi Flick) พวกเขาสร้างสถิติเป็นทีมแรกในประวัติศาสตร์ฟุตบอลที่คว้าแชมป์แชมเปียนส์ลีกด้วยการ "ชนะรวดทุกนัด" ตั้งแต่รอบแบ่งกลุ่มจนถึงนัดชิงชนะเลิศที่เฉือนชนะ ปารีส แซงต์-แชร์กแมง 1-0 ไฮไลต์สำคัญคือการถล่มบาร์เซโลน่าถึง 8-2 ในรอบ 8 ทีมสุดท้าย ความสำเร็จนี้ยังเป็นสะพานเชื่อมให้บาเยิร์นกวาดแชมป์รายการเมเจอร์ครบทั้ง 6 รายการในปีเดียว (Sextuple) เทียบเท่าสถิติโลก</p>
+    </div>
+</div>
+</section>
+
+<section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://gameofthepeople.com/wp-content/uploads/2020/01/pa-497262-e1578429921875.jpg?w=863&h=0&crop=1" class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูโรเปียนคัพ ฤดูกาล 1973-74 (จุดเริ่มต้นยุคทองและแฮตทริกเจ้ายุโรป)</h2>
+      <p>นี่คือจุดเริ่มต้นความยิ่งใหญ่ระดับตำนานบนเวทียุโรปของสโมสรอย่างแท้จริง บาเยิร์น มิวนิก ในยุคนั้นนำทัพโดยยอดนักเตะระดับโลกอย่าง ฟรานซ์ เบ็คเคนบาวเออร์ (Franz Beckenbauer) และ แกร์ด มุลเลอร์ (Gerd Müller) พวกเขาเอาชนะ แอตเลติโก มาดริด ในนัดชิงชนะเลิศ (นัดรีเพลย์) ไปแบบขาดลอย 4-0 คว้าแชมป์ยุโรปใบใหญ่ได้เป็นครั้งแรกในประวัติศาสตร์ของสโมสร และยังเป็นจุดเริ่มต้นของการผูกขาดคว้าแชมป์ยูโรเปียนคัพได้ถึง 3 สมัยติดต่อกัน (ปี 1974, 1975 และ 1976)</p>
+    </div>
+</div>
+</section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #b30000;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

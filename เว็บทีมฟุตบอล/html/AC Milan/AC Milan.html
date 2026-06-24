@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Milan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(32, 32, 32);
+      }
+
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.897);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #b30000;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAA0lBMVEVHcEwAAAAAAAAAAABrAgd8AAMAAAAAAACXAQzOBhfoCBydAw/jBxuxBBIAAABEAAPWBRnqCB3hBhsAAABpAQeSk5Pa2tr39/f////8/PxxAATmBxyJiorLy8vw8PBWAAFSAANpbGx8fX0KAADcBhlcAAHg4ODAwcEAAADFBBaCAQhMTU2KAAW7BBRbW1uqq6vn6OhBQUGdnZ2mAxC4ubkyMjLR0dG3AAAAAABKWlpFAAAAAAAACgkAAADCAABFAAMHKCheAQZsAQcsAAEgAABvAghS1nWwAAAARnRSTlMADWq04f4yy////////x32/////////////////////////9n/////ff////////////////////7//07/mf/U/+Hw/v/mHhAn5wAAA91JREFUeAGdV+eCmkAYzHVZ0biMLoOIHh6K0g/R9J68/yvFTb+2YubPFd35entmwMnp2fnFxfnZ6cmz/8HlVccSQsPqXF0e//6sa++f9rrd3p7G7p4d+bz/fCCdDn6h48jB8/5R6g9t2QNGyiU9NQJ60h4ewdAfC3+MiUtSBVPSnWDsiyMYZr59jYDkFAgxJxng2vZnbd/fRGKBJQMSMekFZMAlFiK6afd+tZYJFFMwDvkT0AyJXK9aOSCTOWKqIlRlSWoolKxi5DJp44Yrx9Fm36q4DgpSoy7CAJzDca5aRHAjE7hc3rIE0ZBeTCiEcD0kcnN52IP+QD8LbzFBNQUKjCoQ2zpmg4F/00KBC5AVGo9lQFbKZVAybFRI4uKwCmfOTwUCakyXSi2nJOMpQa2Cc6goEtmBxwra9hAaKRDGJIsdPXRkYn5/uhYYkbXrjoAXgwjYkm4DjFy3IUcQ61NzDMUailpZ4FraA2gCVi+dTBtGhbW4OmBBprV/9ToHrn3nD4HwB68Lj0RmtuFNLjGh+zYT1l0C37HXgMsJZP7GQPAuGiDg24W0HxK8DxswwCB6ZyD4IHpwCwz9xwhesS5c9MQHsws+xniSgGnz0eiE/kbOXsFA4OLVTG76Rh9iYSBgCaMXV1YErE0EHhBZq6eD4FhILBMBJ7Ccp8NwJnLkRg24Qy7OjFGMzAQ0xvGT2EDeJfiJX5mogY349CTBZ9G9FvcIvjjRHo7jRAON6HVXfH6aQHaGDwiE8y/8YUceSSB937f1W19DHiB4aAKyJEk6ewYrudgj+apNOMaJH+OmKSH2UdC/NbHBiYYwQvwOo2cIoyGRIA4nkjGVIQ6nsrGYIA4Xk7GcIdqVs24oKQwELlLdUMwtrTEQFIaWZmyqvwjq1NRU/7Z1LORjBGFsaut3Bgsy+ZDg8GDRyH6PtvVdAj3aXv0cbVmr4VreHa6wM5Tm4Xp3vJPTCfAi+jveJ1PSPN7vLBgaXhNCowCK2KOGecG4s+KwUnOPnKrdTq84qq7IViuOXrLG0E7YgsF27lKNAsahgjYB4xZ73o1vodHmloQbTypUqapjprVWwPJv2i6axJRhkapdyHo0BeqCbqtFU6+6EeYMwGauN7P5y3CuV7Y554icq3bLdg+xt2SQVtuAO23M8nbCGD2Z9Vuv+0uSu1FMNrc1Ndqv+/rg8GdY8g4qzPxWB4fGycK3XyPgPwjw2vZnJ0ccXfavo4sa+uiyxbh/3Nm3+XX2uWoEbKQ9vDz28Iz+Hp6R4fA0nr5rffquDaev+fjuWkJIKYTVNR3fBvRXZ9+S5NvZyqT9dxZO05RH3JNpAAAAAElFTkSuQmCC"
+      width="60" ><span>AC Milan</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html" class="active">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+    </ul>
+    
+    </nav>
+
+    <header class="hero">
+      <img src="../../img/team/เอซีมิลาน.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>AC Milan<br><span style="color: #b30000; animation: blinking 1s step-start infinite;">ตำนานปีศาจแดงดำ</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่ของรอสโซเนรี<br>ประวัติทีม นักเตะ แชมป์ และเกมที่โลกไม่มีวันลืม</p>
+      <a href="#history" class="btn-primary" style="background-color: #b30000;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+    <div class="team-badge">
+    <img src="https://png.pngtree.com/png-vector/20250808/ourmid/pngtree-fifa-club-world-cup-trophy-png-image_16782183.webp" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>FIFA CLUB WORLD CUP</span>
+  </div>
+  
+    <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/th/e/e1/Intercontinental_cup.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>INTERCONTINENTAL CUP</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://www.pngarts.com/files/5/UEFA-Champions-League-Trophy-PNG-Image.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>CHAMPIONS LEAGUE</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://sortitoutsi.b-cdn.net/uploads/trophy/1301397.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>EUROPEAN SUPERCUP</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://sortitoutsi.b-cdn.net/uploads/trophy/1301395.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>CUP WINNERS' CUP</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/it/thumb/e/e9/Coppa_Italia_Serie_A.svg/960px-Coppa_Italia_Serie_A.svg.png" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>COPPA ITALIA</span>
+  </div>
+
+    <div class="team-badge">
+    <img src="https://r2.thesportsdb.com/images/media/league/trophy/86n52o1705509385.png/medium" style="width: 60px; height: 60px; object-fit: contain;">
+    <span>ITALIAN SUPERCUP</span>
+  </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://miro.medium.com/v2/resize:fit:1284/1*ELmDF1iP7t5vnhVwM6tiyA.jpeg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Paolo Maldini</h4><p style="color: #ffffff54;">กองหลัง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN77qM71-x10qSle2DopRjOAx3tuIGbTZ8X3_kC2Cijw&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Franco Baresi</h4><p style="color: #ffffff54;">กองหลัง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoNb5ypvAJPCiOda5tJ-qqbB0djON3GlBc4cJh2a_22RneF2AzGW5y8f1&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Marco van Basten</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://media.gettyimages.com/id/123976376/photo/ruud-gullit-of-ac-milan-july-1988.jpg?s=612x612&w=gi&k=20&c=7UP_wyJAqDnLvlWikvmkTFfUTKfGdrLF6p6mYL4JoOk='); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ruud Gullit</h4><p style="color: #ffffff54;">กองกลางตัวรุก / กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://iffhs.com/images/legend/173/avatar.png'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Frank Rijkaard</h4><p style="color: #ffffff54;">กองกลางตัวรับ / เซ็นเตอร์แบ็ค</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://assets-eu-01.kc-usercontent.com/1293c890-579f-01b7-8480-902cca7de55e/e7a80a0a-b43d-4def-be1d-87f29cb99bfb/2020.06.30-interna-OP-ED.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Gianni Rivera</h4><p style="color: #ffffff54;">กองกลางตัวรุก (เพลย์เมกเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfIRi6gYG7Ao3hPy7lWbeAaM866X2EkzfwDKTnAjVQG1x9nwusMIINTlY&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Kaká</h4><p style="color: #ffffff54;">กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvBRSRBndqjnCM4Bb6_e2kml2-ANmhr4haxq3x4wsv3Bfd416Jk8IJWXs-&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Andriy Shevchenko</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFDl6LBUFFLvzmrbbZgADFEimhWAioM0Pnifop0HA9xz-qpZ3ugaGnP9s&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Gunnar Nordahl</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfexDS3DB85lj2_ULr-Zo1EHCLbDLgnGJSss-evTmn9JI9kjJNNAi-Iiue&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Clarence Seedorf</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    
+
+  </div>
+</section>
+
+    <h2 class="section-title">เกมประวัติศาสตร์</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://resource.nationtv.tv/uploads/images/md/2022/05/RAwWc0tXSd4DtVTtd7nc.webp"  class="image">
+    <div class="text-content">
+      <h2>กัลโช่ เซเรียอา (Serie A) - แชมป์ 19 สมัย</h2>
+      <p>แชมป์ลีกสูงสุดของประเทศอิตาลี เอซี มิลาน ถือเป็นหนึ่งในสโมสรระดับมหาอำนาจของลีก โดยคว้าแชมป์สมัยแรกได้ตั้งแต่ปี 1901 ยุคที่โดดเด่นที่สุดคือช่วงต้นยุค 90s ที่พวกเขาเคยคว้าแชมป์แบบ "ไร้พ่าย" ตลอดทั้งฤดูกาล (1991-92) ส่วนแชมป์ลีกสมัยล่าสุดคือในฤดูกาล 2021-22 ซึ่งเป็นการยุติการรอคอยที่ยาวนานถึง 11 ปีของแฟนบอล</p>
+    </div>
+</div>
+</section>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/AC_Milan_team_celebrate.jpg"  class="image">
+    <div class="text-content">
+      <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ปี 2007 (แมตช์ล้างแค้นแห่งเอเธนส์)</h2>
+      <p>นี่คือแชมป์ยุโรปที่โด่งดังและอยู่ในความทรงจำของแฟนบอลมากที่สุดรายการหนึ่ง เพราะเป็นการโคจรมาพบกับ ลิเวอร์พูล ในนัดชิงชนะเลิศอีกครั้ง หลังจากที่มิลานเคยแพ้ช็อกโลกไปในปี 2005 นัดนี้ทีมที่นำทัพโดย กาก้า และ ฟิลิปโป้ อินซากี้ สามารถรวมพลังเอาชนะไปได้ 2-1 คว้าแชมป์ยุโรปสมัยที่ 7 ได้อย่างยิ่งใหญ่และล้างแค้นฝังใจได้สำเร็จ</p>
+    </div>
+</div>
+</section>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+    <div class="flex-container">
+      <img src="https://library.sportingnews.com/styles/crop_style_16_9_desktop_webp/s3/2023-04/Ismael%20Bennacer%20AC%20Milan%20041223.jpg.webp?itok=PXGdRh8P"  class="image">
+    <div class="text-content">
+      <h2>ยูฟ่าแชมเปียนส์ลีก (UEFA Champions League) - แชมป์ 7 สมัย</h2>
+      <p>นี่คือถ้วยรางวัลที่ยิ่งใหญ่ที่สุดของสโมสร มิลานคือทีมที่ประสบความสำเร็จในยุโรปมากเป็นอันดับ 2 ของโลก (รองจากเรอัล มาดริด) พวกเขาคว้าแชมป์รายการนี้มาครองถึง 7 ครั้ง โดยเฉพาะยุคปี 1989-1990 ที่ป้องกันแชมป์ได้ และยุค 2003-2007 ภายใต้การนำของ คาร์โล อันเชลอตติ ที่พาทีมเข้าชิงชนะเลิศถึง 3 ครั้งและคว้าแชมป์มาได้ 2 สมัย ทำให้ทัวร์นาเมนต์นี้กลายเป็นสัญลักษณ์ประจำสโมสร</p>
+    </div>
+</div>
+</section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #b30000;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

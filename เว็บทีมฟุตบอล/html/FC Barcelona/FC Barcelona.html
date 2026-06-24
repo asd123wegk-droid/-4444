@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/Flexbox.css">
+    <style>
+      body {
+        background-color: rgb(0, 5, 49);
+      }
+
+      .navbar {
+        background-color: rgba(9, 0, 41, 0.897);
+      }
+
+      .nav-links a{
+        color: #ccccccd0;
+      }
+
+      .section-title::before {
+        background-color: #b3b000;
+      }
+
+      /* แผ่นฟิล์มไล่ระดับสีทับรูปภาพแบนเนอร์ */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(17, 0, 39) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+        z-index: 1;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <img src="data:image/png;base64,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"
+      width="60" ><span>FC Barcelona</span><br>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="../Hello.html">หน้าแรก</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">สโมสร ▾</a>
+        <div class="dropdown-content">
+          <a href="../AC Milan/AC Milan.html">AC Milan</a>
+          <a href="../Arsenal FC/Arsenal FC.html">Arsenal FC</a>
+          <a href="../Chelsea FC/Chelsea FC.html">Chelsea FC</a>
+          <a href="../FC Barcelona/FC Barcelona.html" class="active">FC Barcelona</a>
+          <a href="../FC Bayern Munich/FC Bayern Munich.html">FC Bayern Munich</a>
+          <a href="../Liverpool FC/Liverpool FC.html">Liverpool FC</a>
+          <a href="../Manchester City/Manchester City.html">Manchester City</a>
+          <a href="../Manchester United/Manchester United.html">Manchester United</a>
+          <a href="../Paris Saint-Germain/Paris Saint-Germain.html">Paris Saint-Germain</a>
+          <a href="../Real Madrid CF/Real Madrid CF.html">Real Madrid CF</a>
+        </div>
+      </li>
+
+      <li><a href="../แชมป์สโมสร.html">แชมป์สโมสรในตำนาน</a></li>
+      <li><a href="../ผู้จัดทำ.html">ผู้จัดทำ</a></li>
+    </ul>
+    
+    </nav>
+
+
+    <header class="hero">
+      <img src="../../img/team/barcelona.png" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <h1>FC Barcelona<br><span style="color: #b3b000; animation: blinking 1s step-start infinite;">ตำนานอาซูลกราน่า</span></h1>
+      <p>เจาะลึกประวัติศาสตร์อันยิ่งใหญ่ของทีมที่เป็น "มากกว่าสโมสร" (Més que un club)<br>เรื่องราวความสำเร็จแห่งคัมป์นู และเหล่าตำนานนักเตะที่ยิ่งใหญ่ที่สุดตลอดกาล</p>
+      <a href="#history" class="btn-primary" style="background-color: #b30000;">สำรวจสโมสร</a>
+  </div>
+ </header>   
+
+
+    <main class="container">
+    <h2 class="section-title">แชมป์สโมสร</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+  
+    <div class="team-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/LaLiga.png" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>La Liga</span>
+      </div>
+
+      <div class="team-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Copa_del_Rey_Trophy.png" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>Copa del Rey</span>
+      </div>
+    
+      <div class="team-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/SupercopaEspa%C3%B1a.png" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>Supercopa de España</span>
+      </div>
+    
+      <div class="team-badge">
+        <img src="https://png.pngtree.com/png-vector/20251011/ourmid/pngtree-uefa-champions-league-trophy-png-image_17691123.webp" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>UEFA Champions League</span>
+      </div>
+    
+      <div class="team-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/UEFA_-_Super_Cup.png" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>UEFA Super Cup</span>
+      </div>
+    
+      <div class="team-badge">
+        <img src="https://png.pngtree.com/png-clipart/20250623/original/pngtree-fifa-club-world-cup-trophy-png-image_21226694.png" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>FIFA Club World Cup</span>
+      </div>
+    
+      <div class="team-badge">
+        <img src="https://tmssl.akamaized.net//images/erfolge/verybigquad/53.png?lm=1647507697" style="width: 60px; height: 60px; object-fit: contain;">
+        <span>UEFA Cup Winners' Cup</span>
+      </div>
+
+</section>
+
+    <section id="history" id="history" class="section-block">
+  <h2 class="section-title">นักเตะที่ดีที่สุดในทีม</h2>
+  <div class="grid-10" >
+    
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07wzuNY9JxsQyGiblaQeTK1NXAlAt5Uu5G4FNkxkAOA&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Lionel Messi</h4><p style="color: #ffffff54;">กองหน้า / ปีกขวา</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz6CkNZBCHEGBUxYyx2QGPxzsVYFk8Mipr99qVeUChDSWIzLzE3MqNd8MA&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Xavi Hernández</h4><p style="color: #ffffff54;">กองกลาง</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4_XEIrg8vPF4sClZ4PfAyeDjW-FF81Pp2qDfn38XFLhEF7gHNkUiiGbA&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Andrés Iniesta</h4><p style="color: #ffffff54;">กองกลาง / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://cdn.britannica.com/92/163892-050-D937D47D/Andres-Iniesta-FC-Barcelona.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Johan Cruyff</h4><p style="color: #ffffff54;">กองหน้า / กองกลางตัวรุก</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://cdn.britannica.com/92/163892-050-D937D47D/Andres-Iniesta-FC-Barcelona.jpg'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Ronaldinho</h4><p style="color: #ffffff54;">กองกลางตัวรุก / ปีกซ้าย</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqP0PNrEcBy8Z36gHoujk0diMTkJlR7Fqv4Rk7k9lvhQ&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Carles Puyol</h4><p style="color: #ffffff54;">กองหลัง (เซ็นเตอร์แบ็ค)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNi3JCwHcYPrDecIh1JSUmY0vfdNBjwDABkXJja3jqo72-yiLsIds7m60&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Sergio Busquets</h4><p style="color: #ffffff54;">กองกลาง (ตัวรับ)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHsq1npLbVHn_mOrTJfcBTmDSQCYqe-1Bosns_CSnWmGUIHn5-cxF5Kghc&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Dani Alves</h4><p style="color: #ffffff54;">กองหลัง (แบ็คขวา)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbbdDQ6452XvOmQm5vo9_R0jPZM75IRVhnP_BFgfLv2LMKtFIfIId_EFE&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>Luis Suárez</h4><p style="color: #ffffff54;">กองหน้า (สไตรเกอร์)</p></div></div>
+    <div class="player-card" style="background-color: rgba(20, 20, 20, 0.897);"><div class="player-photo" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT1aEVfRJJ8Z6yv5CPb4uGxq4gWTUkodIfAB2ewEuwaWjsw1mcuBOjMFY-&s=10'); background-size: cover; background-position: center;"></div><div class="player-info"><h4>László Kubala</h4><p style="color: #ffffff54;">กองหน้า</p></div></div>
+  
+  </div>
+</section>
+
+        <h2 class="section-title">เกมประวัติศาสตร์</h2>
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+        <div class="flex-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1xk-B-7D6ckqtPPMaZJdS41bzmJQ5eHfAyOES5BUaqU4VAxuif6bI5B4&s=10" class="image">
+        <div class="text-content">
+          <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2008-09 (จุดเริ่มต้นทีมต่างดาวและทริปเปิลแชมป์)</h2>
+          <p>นี่คือฤดูกาลที่ยิ่งใหญ่ที่สุดในประวัติศาสตร์ของสโมสร ภายใต้การคุมทีมปีแรกของ เป๊ป กวาร์ดิโอล่า บาร์เซโลน่าได้สร้างทีมชุดที่ถูกขนานนามว่า "ทีมต่างดาว" ด้วยสไตล์การเล่นแบบ "ตีกี-ตากา" (Tiki-Taka) ที่เน้นการต่อบอลสั้นและครอบครองบอลอย่างเบ็ดเสร็จ นำทัพโดย ลิโอเนล เมสซี่, ชาบี เอร์นานเดซ และ อันเดรส อิเนียสต้า พวกเขาเอาชนะแมนเชสเตอร์ ยูไนเต็ด 2-0 ในนัดชิงชนะเลิศ คว้าแชมป์ยุโรปพร้อมกับสร้างประวัติศาสตร์คว้าทริปเปิลแชมป์ได้เป็นครั้งแรก ก่อนจะกวาดแชมป์ไปถึง 6 รายการในปีปฏิทินเดียวกัน</p>
+        </div>
+    </div>
+    </section>
+
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+        <div class="flex-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmg5e7mJoTXGyOMhRb0HFNIMWv7y4P1u8WD-BILHwh8DG51hPqrSdje-s&s=10" class="image">
+        <div class="text-content">
+          <h2>แชมป์ยูฟ่าแชมเปียนส์ลีก ฤดูกาล 2014-15 (ยุคทองของ 3 ประสาน MSN)</h2>
+          <p>อีกหนึ่งฤดูกาลแห่งความทรงจำเมื่อบาร์เซโลน่ากลายเป็นสโมสรแรกในประวัติศาสตร์ฟุตบอลยุโรปที่สามารถคว้า "ทริปเปิลแชมป์" ได้ถึง 2 ครั้ง ภายใต้การคุมทีมของ หลุยส์ เอ็นริเก้ ความน่ากลัวของทีมชุดนี้คือแนวรุกที่อันตรายที่สุดในโลกอย่าง 3 ประสาน "MSN" (เมสซี่, ซัวเรซ, เนย์มาร์) ที่ถล่มประตูคู่แข่งเป็นว่าเล่น ในนัดชิงชนะเลิศพวกเขาเอาชนะ ยูเวนตุส ไปได้อย่างสุดมันส์ 3-1 ประกาศศักดาความเป็นเจ้ายุโรปได้อย่างสมบูรณ์แบบ</p>
+        </div>
+    </div>
+    </section>
+
+    <section class="team-logos-row" style="background-color: rgba(20, 20, 20, 0.897);">
+        <div class="flex-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQosEFjBWWFdYBK2suM40HJq1zo46i1gBwQ8mt1dRmHYA&s" class="image">
+        <div class="text-content">
+          <h2>แชมป์ยูโรเปียนคัพ ฤดูกาล 1991-92 (แชมป์ยุโรปสมัยแรกของ ดรีมทีม)</h2>
+          <p>ก่อนจะเข้าสู่ยุคแชมเปียนส์ลีก บาร์เซโลน่าเคยประสบความสำเร็จอย่างยิ่งใหญ่ภายใต้การคุมทีมของ โยฮัน ครัฟฟ์ ผู้สร้างตำนาน "ดรีมทีม" (Dream Team) ที่เปลี่ยนปรัชญาการเล่นของสโมสรไปตลอดกาล ในนัดชิงชนะเลิศที่สนามเวมบลีย์ พวกเขาต้องดวลกับ ซามพ์โดเรีย เกมยืดเยื้อจนถึงช่วงต่อเวลาพิเศษ และเป็น โรนัลด์ คูมัน ที่ตะบันฟรีคิกสุดสวยเป็นประตูชัยในนาทีที่ 112 พาทีมคว้าแชมป์ยุโรปใบใหญ่ได้เป็นครั้งแรกในประวัติศาสตร์สโมสร ซึ่งเป็นรากฐานสำคัญของความยิ่งใหญ่มาจนถึงปัจจุบัน</p>
+        </div>
+    </div>
+  </section>
+</main>
+
+  <footer class="my-footer">
+  <div class="footer-content">
+    <h3 style="color: #b30000;">Football Legends</h3>
+    <p>ติดต่อเรา | เกี่ยวกับเรา | นโยบายความเป็นส่วนตัว</p>
+    <p>© 2026 สงวนลิขสิทธิ์</p>
+  </div>
+</footer>
+</body>
+</html>

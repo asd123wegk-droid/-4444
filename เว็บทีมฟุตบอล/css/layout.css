@@ -1,0 +1,44 @@
+/* กรอบเนื้อหาหลักจำกัดความกว้างและจัดกึ่งกลาง */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ระยะห่างด้านล่างของแต่ละหมวดหมู่ (Section) */
+.section-block {
+  margin-bottom: 50px;
+}
+
+/* หัวข้อหลักของแต่ละหมวดหมู่ */
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ขีดสีฟ้าแนวตั้งหน้าหัวข้อ */
+.section-title::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 24px;
+  background-color: #b3a700;
+}
+
+/* ระบบ Grid จัดกล่องเนื้อหาแบบ 5 คอลัมน์ */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* ระบบ Grid จัดกล่องเนื้อหาแบบ 10 คอลัมน์ */
+.grid-10 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 15px;
+}

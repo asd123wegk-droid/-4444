@@ -1,0 +1,127 @@
+.btn-primary {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn-primary:hover { background-color: #1d4ed8; }
+
+.team-logos-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b1120;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 40px;
+  overflow-x: auto;
+}
+
+.team-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 100px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.team-badge:hover { opacity: 1; }
+
+/* กรอบรูปโลโก้*/
+.badge-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain; /* ป้องกันไม่ให้โลโก้ถูกตัดหรือผิดสัดส่วน */
+  background-color: transparent; /* เอาสีพื้นหลังทึบๆออก */
+
+}
+
+/* ชื่อใต้โลโก้ */
+.team-badge span { font-size: 12px; }
+
+/* การ์ดแสดงประวัติทีม */
+.history-card {
+  background: linear-gradient(to bottom, #111827, #0b1120);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+.history-card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.5); }
+
+/* แสงฟุ้งสีฟ้าด้านบนของการ์ดประวัติทีม */
+.history-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100px;
+  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.2), transparent);
+}
+
+/* โลโก้ในการ์ดประวัติทีม */
+.history-logo {
+  width: 70px; height: 70px;
+  background-color: #1e293b;
+  border-radius: 50%;
+  margin: 20px auto;
+  z-index: 1;
+}
+
+/* ชื่อและรายละเอียดในการ์ดประวัติทีม */
+.history-card h3 { font-size: 16px; text-align: center; margin-bottom: 10px; z-index: 1; }
+.history-card p { font-size: 12px; color: #94a3b8; flex-grow: 1; z-index: 1; }
+
+/* ลิงก์กดอ่านต่อ */
+.read-more {
+  display: block;
+  color: #b3a700;
+  font-size: 13px;
+  margin-top: 15px;
+  z-index: 1;
+}
+
+/* การ์ดแสดงรูปนักเตะ */
+.player-card {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* กรอบรูปนักเตะแบบมีเงาไล่ระดับจากฐาน */
+.player-photo {
+  height: 180px;
+  background-color: #1e293b;
+  background-image: linear-gradient(to top, #0f172a, transparent);
+}
+
+/* ชื่อและตำแหน่งของนักเตะ */
+.player-info { padding: 10px; }
+.player-info h4 { font-size: 14px; margin-bottom: 2px; }
+.player-info p { font-size: 11px; color: #64748b; }
+
+/* การ์ดแสดงแมตช์ประวัติศาสตร์ */
+.match-card {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* รูปภาพของแมตช์ประวัติศาสตร์ */
+.match-img { height: 140px; width: 100%; }
+
+/* ข้อมูลของแมตช์ประวัติศาสตร์ */
+.match-content { padding: 15px; }
+.match-content h3 { font-size: 16px; color: #ffffff; }
+.match-content h4 { font-size: 14px; color: #cbd5e1; margin: 5px 0; }
+.match-content p { font-size: 12px; color: #94a3b8; }

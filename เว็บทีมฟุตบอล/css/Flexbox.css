@@ -1,0 +1,13 @@
+/* ส่วนจัดการรูปภาพ */
+.flex-container {
+  display: flex;           
+  align-items: flex-start; 
+  gap: 20px;               /* ระยะห่างระหว่างรูปภาพกับข้อความ */
+}
+
+/* ส่วนจัดการคอนเทนเนอร์ */
+.image {
+  width: 350px;            
+  height: auto;
+  flex-shrink: 0;         
+}
